@@ -13,8 +13,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                retry(3) {
-                    echo 'Deploy pary retry 3 times"'
+                retry(1) {
+                    echo 'Deploy pary retry 1 times"'
                 }
 
                 timeout(time: 1, unit: 'MINUTES') {
