@@ -25,7 +25,7 @@ pipeline {
     }
     post {
             always {
-                junit 'demo/*.xml'
+                echo 'This will run always'
             }
             success {
                 echo 'This will run only if successful'
