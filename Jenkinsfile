@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
-            steps {
-                sh 'mvn --version'
-            }
-        }
         stage('Build') {
             steps {
                 bat 'set'
@@ -13,17 +8,17 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'echo "Fail!"; exit 1'
+                echo '"Fail!"; exit 1'
             }
         }
         stage('Deploy') {
             steps {
                 retry(3) {
-                    sh 'echo "Deploy part"'
+                    echo 'Deploy pary retry 3 times"'
                 }
 
-                timeout(time: 3, unit: 'MINUTES') {
-                    sh 'echo timeout'
+                timeout(time: 1, unit: 'MINUTES') {
+                    echo 'timeout 1 minute'
                 }
             }
         }
